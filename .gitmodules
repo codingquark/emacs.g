@@ -24,6 +24,15 @@
 [submodule "epkg"]
 	path = lib/epkg
 	url = git@github.com:emacscollective/epkg.git
+[submodule "erc-hl-nicks"]
+	path = lib/erc-hl-nicks
+	url = git@github.com:leathekd/erc-hl-nicks.git
+[submodule "erc-terminal-notifier"]
+	path = lib/erc-terminal-notifier
+	url = git@github.com:julienXX/erc-terminal-notifier.el.git
+[submodule "exec-path-from-shell"]
+	path = lib/exec-path-from-shell
+	url = git@github.com:purcell/exec-path-from-shell.git
 [submodule "ghub"]
 	path = lib/ghub
 	url = git@github.com:magit/ghub.git
@@ -55,3 +64,6 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git
+[submodule "znc"]
+	path = lib/znc
+	url = git@github.com:sshirokov/ZNC.el.git
