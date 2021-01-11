@@ -95,10 +95,9 @@
   :bind ("C-x w" . elfeed))
 
 (use-package icomplete
-  :demand
   :init
-  (icomplete-mode t)
-  :custom
+  (icomplete-mode)
+  :config
   (setq completion-ignore-case t)
   (setq tab-always-indent 'complete)
   (setq read-buffer-completion-ignore-case t)
