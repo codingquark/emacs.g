@@ -48,7 +48,7 @@
 (use-package modus-themes
   :init
   (modus-themes-load-themes)
-  :hook ((after-init-hook . modus-themes-load-operandi))
+  :hook ((after-init . modus-themes-load-operandi))
   :bind ("<f5>" . modus-themes-toggle))
 
 (use-package elfeed
