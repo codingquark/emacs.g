@@ -93,3 +93,14 @@
           "https://craphound.com/feed"
           ))
   :bind ("C-x w" . elfeed))
+
+(use-package icomplete
+  :init
+  (setq icomplete-mode t
+	completion-ignore-case t
+	tab-always-indent 'complete
+	read-buffer-completion-ignore-case t
+	read-file-name-completion-ignore-case t
+	completion-cycle-threshold t
+	icomplete-prospects-height 1
+	completion-styles '(flex partial-completion initials)))
