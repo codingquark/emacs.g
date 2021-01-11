@@ -154,3 +154,8 @@
          ("C-x _" . balance-windows)
          ("C-x +" . balance-windows-area)
          ("s-q" . window-toggle-side-windows)))
+
+(use-package winner
+  :hook (after-init-hook . winner-mode)
+  :bind (("<s-right>" . winner-redo)
+         ("<s-left>" . winner-undo)))
