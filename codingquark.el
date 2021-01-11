@@ -119,3 +119,15 @@
   (setq dired-isearch-filenames 'dwim)
   (setq dired-create-destination-dirs 'ask)
   (setq dired-vc-rename-file t))
+
+
+(use-package project
+  :init
+  (setq project-switch-commands
+        '((?f "File" project-find-file)
+          (?g "Grep" project-find-regexp)
+          (?d "Dired" project-dired)
+          (?b "Buffer" project-switch-to-buffer)
+          (?q "Query replace" project-query-replace-regexp)
+          (?v "VC dir" project-vc-dir)
+          (?e "Eshell" project-eshell))))
