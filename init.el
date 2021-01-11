@@ -70,8 +70,9 @@
 (use-package diff-hl
   :config
   (setq diff-hl-draw-borders nil)
-  (global-diff-hl-mode)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t))
+  (setq diff-hl-side 'left)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh t)
+  :hook (after-init . global-diff-hl-mode))
 
 (use-package diff-mode
   :defer t
@@ -83,7 +84,11 @@
 
 (use-package dired
   :defer t
-  :config (setq dired-listing-switches "-alh"))
+  :config
+  (setq dired-listing-switches "-lhF")
+  (setq dired-dwim-target t)
+  :hook ((dired-mode . dired-hide-details-mode)
+         (dired-mode . hl-line-mode)))
 
 (use-package eldoc
   :when (version< "25" emacs-version)

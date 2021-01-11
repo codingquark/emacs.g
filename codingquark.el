@@ -109,13 +109,6 @@
   (setq icomplete-prospects-height 1)
   (setq completion-styles '(flex partial-completion initials)))
 
-(use-package dired
-  :config
-  (setq dired-listing-switches "-lhF")
-  (setq dired-dwim-target t)
-  :hook ((dired-mode . dired-hide-details-mode)
-         (dired-mode . hl-line-mode)))
-
 (use-package dired-aux
   :config
   (setq dired-isearch-filenames 'dwim)
