@@ -12,8 +12,8 @@
 		       (when (get-buffer "#emacs")
 			 (switch-to-buffer "#emacs"))))
   :config
-  (setq erc-hide-list '("JOIN" "PART" "QUIT")
-	erc-keywords '("codingquark" "codingquark_"))
+  (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+  (setq erc-keywords '("codingquark" "codingquark_"))
   (erc-completion-mode 1))
 
 (use-package znc
@@ -97,15 +97,15 @@
 (use-package icomplete
   :demand
   :init
-  (icomplete-mode)
+  (icomplete-mode t)
   :custom
-  (setq completion-ignore-case t
-	tab-always-indent 'complete
-	read-buffer-completion-ignore-case t
-	read-file-name-completion-ignore-case t
-	completion-cycle-threshold t
-	icomplete-prospects-height 1
-	completion-styles '(flex partial-completion initials)))
+  (setq completion-ignore-case t)
+  (setq tab-always-indent 'complete)
+  (setq read-buffer-completion-ignore-case t)
+  (setq read-file-name-completion-ignore-case t)
+  (setq completion-cycle-threshold t)
+  (setq icomplete-prospects-height 1)
+  (setq completion-styles '(flex partial-completion initials)))
 
 (use-package dired
   :config
