@@ -52,7 +52,10 @@
   :bind ("<f5>" . modus-themes-toggle))
 
 (use-package elfeed
-  :init
+  :config
+  (setq elfeed-use-curl t)
+  (setq elfeed-curl-max-connections 20)
+  (setq elfeed-search-title-max-width 80)
   (setq elfeed-feeds
 	'(("https://cjb.sh/articles/feed.xml" blog emacs)
           ("http://planet.emacslife.com/atom.xml" blog emacs planet)
@@ -92,7 +95,7 @@
           "https://www.crummy.com/rss.xml"
           "https://craphound.com/feed"
           ))
-  :bind ("C-x w" . elfeed))
+  :bind ("C-c e" . elfeed))
 
 (use-package icomplete
   :init
