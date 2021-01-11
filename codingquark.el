@@ -161,3 +161,20 @@
   :hook (after-init-hook . winner-mode)
   :bind (("<s-right>" . winner-redo)
          ("<s-left>" . winner-undo)))
+
+(use-package battery
+  :config
+  (setq battery-mode-line-format " [%b%p%%]")
+  (setq battery-mode-line-limit 95)
+  (setq battery-update-interval 180)
+  (setq battery-load-low 20)
+  (setq battery-load-critical 10)
+  :hook (after-init . display-battery-mode))
+
+(use-package time
+  :config
+  (setq display-time-format "%H:%M  %Y-%m-%d")
+  (setq display-time-interval 60)
+  (setq display-time-mail-directory nil)
+  (setq display-time-default-load-average nil)
+  :hook (after-init . display-time-mode))
