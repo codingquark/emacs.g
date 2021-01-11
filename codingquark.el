@@ -171,3 +171,18 @@
   (setq display-time-mail-directory nil)
   (setq display-time-default-load-average nil)
   :hook (after-init . display-time-mode))
+
+(use-package emacs
+  :config
+  (setq window-divider-default-right-width 1)
+  (setq window-divider-default-bottom-width 1)
+  (setq window-divider-default-places 'right-only)
+  :hook (after-init . window-divider-mode))
+
+(use-package fringe
+  :config
+  (fringe-mode nil)
+  (setq-default fringes-outside-margins nil)
+  (setq-default indicate-buffer-boundaries 'left)
+  (setq-default indicate-empty-lines nil)
+  (setq-default overflow-newline-into-fringe t))
