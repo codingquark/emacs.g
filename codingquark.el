@@ -131,3 +131,13 @@
           (?q "Query replace" project-query-replace-regexp)
           (?v "VC dir" project-vc-dir)
           (?e "Eshell" project-eshell))))
+
+(use-package ibuffer
+  :config
+  (setq ibuffer-use-other-window nil)
+  (setq ibuffer-show-empty-filter-groups nil)
+  (setq ibuffer-movement-cycle nil)
+  (setq ibuffer-use-header-line t)
+  (setq ibuffer-default-sorting-mode 'filename/process)
+  :bind (("C-x C-b" . ibuffer))
+  :hook (ibuffer-mode . hl-line-mode))
