@@ -87,6 +87,7 @@
   :config
   (setq dired-listing-switches "-lhF")
   (setq dired-dwim-target t)
+  (setq dired-use-ls-dired nil)
   :hook ((dired-mode . dired-hide-details-mode)
          (dired-mode . hl-line-mode)))
 
