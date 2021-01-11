@@ -106,3 +106,16 @@
 	completion-cycle-threshold t
 	icomplete-prospects-height 1
 	completion-styles '(flex partial-completion initials)))
+
+(use-package dired
+  :config
+  (setq dired-listing-switches "-lhF")
+  (setq dired-dwim-target t)
+  :hook ((dired-mode . dired-hide-details-mode)
+         (dired-mode . hl-line-mode)))
+
+(use-package dired-aux
+  :config
+  (setq dired-isearch-filenames 'dwim)
+  (setq dired-create-destination-dirs 'ask)
+  (setq dired-vc-rename-file t))
