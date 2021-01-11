@@ -186,3 +186,17 @@
   (setq-default indicate-buffer-boundaries 'left)
   (setq-default indicate-empty-lines nil)
   (setq-default overflow-newline-into-fringe t))
+
+
+(use-package electric
+  :config
+  (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+  (setq electric-pair-preserve-balance t)
+  (setq electric-quote-context-sensitive t)
+  (setq electric-quote-paragraph t)
+  (setq electric-quote-string nil)
+  (setq electric-quote-replace-double t)
+  :hook (after-init . (lambda ()
+                        (electric-indent-mode 1)
+                        (electric-pair-mode -1)
+                        (electric-quote-mode -1))))
