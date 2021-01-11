@@ -141,3 +141,16 @@
   (setq ibuffer-default-sorting-mode 'filename/process)
   :bind (("C-x C-b" . ibuffer))
   :hook (ibuffer-mode . hl-line-mode))
+
+(use-package window
+  :bind (("s-n" . next-buffer)
+         ("s-p" . previous-buffer)
+         ("s-o" . other-window)
+         ("s-2" . split-window-below)
+         ("s-3" . split-window-right)
+         ("s-0" . delete-window)
+         ("s-1" . delete-other-windows)
+         ("s-5" . delete-frame)
+         ("C-x _" . balance-windows)
+         ("C-x +" . balance-windows-area)
+         ("s-q" . window-toggle-side-windows)))
