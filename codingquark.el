@@ -151,7 +151,7 @@
          ("s-q" . window-toggle-side-windows)))
 
 (use-package winner
-  :hook (after-init-hook . winner-mode)
+  :hook (after-init . winner-mode)
   :bind (("<s-right>" . winner-redo)
          ("<s-left>" . winner-undo)))
 
