@@ -207,3 +207,10 @@
 (use-package vterm
   :config
   (setq vterm-max-scrollback 2000))
+
+(use-package faces
+  :ensure nil
+  :custom
+  (face-font-family-alternatives '(("Menlo" "Iosevka" "DejaVu Sans Mono" "Monospace")))
+  :init
+  (set-face-attribute 'default nil :family (caar face-font-family-alternatives) :weight 'regular :width 'semi-condensed :height 120))
