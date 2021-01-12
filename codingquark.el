@@ -200,3 +200,6 @@
                         (electric-indent-mode 1)
                         (electric-pair-mode -1)
                         (electric-quote-mode -1))))
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
