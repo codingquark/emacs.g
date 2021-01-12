@@ -203,3 +203,7 @@
 
 (use-package yaml-mode
   :mode "\\.ya?ml\\'")
+
+(use-package vterm
+  :config
+  (setq vterm-max-scrollback 2000))
