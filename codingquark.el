@@ -177,7 +177,8 @@
   (setq window-divider-default-right-width 1)
   (setq window-divider-default-bottom-width 1)
   (setq window-divider-default-places 'right-only)
-  :hook (after-init . window-divider-mode))
+  :hook (after-init . window-divider-mode)
+  :bind (("s-k" . kill-buffer)))
 
 (use-package fringe
   :config
