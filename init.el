@@ -85,7 +85,7 @@
 (use-package dired
   :defer t
   :config
-  (setq dired-listing-switches "-lhF")
+  (setq dired-listing-switches "-lahF")
   (setq dired-dwim-target t)
   (setq dired-use-ls-dired nil)
   :hook ((dired-mode . dired-hide-details-mode)
