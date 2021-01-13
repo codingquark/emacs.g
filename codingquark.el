@@ -9,8 +9,8 @@
 
 (use-package erc
   :bind ("C-c i e" . (lambda () (interactive)
-		       (when (get-buffer "#emacs")
-			 (switch-to-buffer "#emacs"))))
+                       (when (get-buffer "#emacs")
+                         (switch-to-buffer "#emacs"))))
   :config
   (setq erc-hide-list '("JOIN" "PART" "QUIT"))
   (setq erc-keywords '("codingquark" "codingquark_"))
@@ -57,7 +57,7 @@
   (setq elfeed-curl-max-connections 20)
   (setq elfeed-search-title-max-width 80)
   (setq elfeed-feeds
-	'(("https://cjb.sh/articles/feed.xml" blog emacs)
+        '(("https://cjb.sh/articles/feed.xml" blog emacs)
           ("http://planet.emacslife.com/atom.xml" blog emacs planet)
           "https://babbagefiles.xyz/posts/atom.xml"
           ("http://www.shakthimaan.com/news.xml" emacs)
@@ -214,9 +214,15 @@
   :custom
   (face-font-family-alternatives '(("Menlo" "Iosevka" "DejaVu Sans Mono" "Monospace")))
   :init
-  (set-face-attribute 'default nil :family (caar face-font-family-alternatives) :weight 'regular :width 'semi-condensed :height 120))
+  (set-face-attribute 'default nil
+                      :family (caar face-font-family-alternatives)
+                      :weight 'regular
+                      :width 'semi-condensed
+                      :height 120))
 
 (use-package markdown-mode
+  ;; To enable editing of code blocks in indirect buffers using C-c ’,
+  ;; you will need to install the edit-indirect package.
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
