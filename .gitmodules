@@ -20,6 +20,9 @@
 [submodule "elfeed"]
 	path = lib/elfeed
 	url = git@github.com:skeeto/elfeed.git
+[submodule "elpher"]
+	path = lib/elpher
+	url = https://thelambdalab.xyz/git/elpher.git
 [submodule "emacsql"]
 	path = lib/emacsql
 	url = git@github.com:skeeto/emacsql.git
