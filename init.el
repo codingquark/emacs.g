@@ -187,6 +187,8 @@
     (when (file-exists-p file)
       (load file))))
 
+(put 'narrow-to-region 'disabled nil)
+
 ;; Local Variables:
 ;; indent-tabs-mode: nil
 ;; End:
