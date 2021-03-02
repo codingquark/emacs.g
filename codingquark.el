@@ -73,7 +73,6 @@
           ("https://blog.vero.site/index.xml" blog puzzles)
           ("https://decoded.legal/blog/feed/rss" uncertain)
           ("http://bach.ai/feed.xml" science blog)
-          ("https://write.as/minimalistedtech/feed/" uncertain)
           ("http://norvig.com/rss-feed.xml" author tech science)
           ("https://shuaibwriteskhanthinks.wordpress.com/feed/" uncertain)
           ("http://karpathy.github.io/feed.xml" blog ai science)
@@ -94,6 +93,10 @@
           ("https://www.solipsys.co.uk/rss.xml" math blog)
           "https://www.crummy.com/rss.xml"
           "https://craphound.com/feed"
+	  ("https://www.murilopereira.com/index.xml" blog emacs)
+	  ("https://www.scottaaronson.com/blog/?feed=rss2" uncertain)
+	  ("https://thezvi.wordpress.com/feed/" uncertain)
+	  ("https://www.hamvocke.com/feed.xml" blog uncertain)
           ))
   :bind ("C-c e" . elfeed))
 
