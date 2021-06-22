@@ -253,3 +253,15 @@ buffer even if one already exists."
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
+
+(use-package org
+  :bind (("C-c c" . org-capture)
+	 ("C-c a" . org-agenda))
+  :hook ((org-mode . auto-fill-mode))
+  :config
+  (setq org-directory "~/Documents/org")
+  (setq org-agenda-files (list (concat org-directory "/todo.org")))
+  (setq org-archive-location (concat org-directory "/archive.org::* From %s"))
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file (lambda () (concat org-directory "/todo.org")))
+           "* TODO %? %^G\n %i\n %a %u"))))
