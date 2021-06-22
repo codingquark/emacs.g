@@ -14,6 +14,9 @@
   :config
   (setq erc-hide-list '("JOIN" "PART" "QUIT"))
   (setq erc-keywords '("codingquark" "codingquark_"))
+  (setq erc-join-buffer 'bury)
+  (setq erc-server-reconnect-attempts 5)
+  (setq erc-server-reconnect-timeout 3)
   (erc-completion-mode 1))
 
 (use-package znc
