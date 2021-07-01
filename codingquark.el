@@ -271,3 +271,19 @@ buffer even if one already exists."
   (setq org-capture-templates
         '(("t" "Todo" entry (file (lambda () (concat org-directory "/todo.org")))
            "* TODO %? %^G\n %i\n %a %u"))))
+
+(use-package org-brain
+  :init
+  (setq org-brain-path "~/Documents/org/brain")
+  :config
+  (bind-key "C-c b" org-brain-prefix-map org-mode-map)
+  (setq org-id-track-globally t)
+  (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+  (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
+  (push '("b" "Brain" plain (function org-brain-goto-end)
+	  "* %i%?" :empty-lines 1)
+	org-capture-templates)
+  (setq org-brain-visualize-default-choices 'all)
+  (setq org-brain-title-max-length 12)
+  (setq org-brain-include-file-entries t
+	org-brain-file-entries-use-title t))
