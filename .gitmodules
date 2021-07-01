@@ -63,6 +63,9 @@
 [submodule "modus-themes"]
 	path = lib/modus-themes
 	url = git@gitlab.com:protesilaos/modus-themes.git
+[submodule "org-brain"]
+	path = lib/org-brain
+	url = git@github.com:Kungsgeten/org-brain.git
 [submodule "packed"]
 	path = lib/packed
 	url = git@github.com:emacscollective/packed.git
