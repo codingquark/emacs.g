@@ -90,7 +90,6 @@
           ("https://gitlab.com/protesilaos/modus-themes/-/tags?feed_token=WVu_3EwWidkDhPDG-LJy&format=atom" upstream-tags modus-themes debian-contrib)
           ("http://www.aaronsw.com/2002/feeds/pgessays.rss" uncertain)
           ("http://www.antipope.org/charlie/blog-static/atom.xml" author blog scifi)
-          "https://blog.mattedgar.com/feed/"
           "https://yihui.org/en/index.xml"
           "https://supersciencegrl.co.uk/rss.xml"
           ("https://www.solipsys.co.uk/rss.xml" math blog)
@@ -100,6 +99,13 @@
 	  ("https://www.scottaaronson.com/blog/?feed=rss2" uncertain)
 	  ("https://thezvi.wordpress.com/feed/" uncertain)
 	  ("https://www.hamvocke.com/feed.xml" blog uncertain)
+	  ("https://world.hey.com/dhh/feed.atom" blog uncertain)
+	  ("https://medium.com/feed/@@nic__carter" blog cryptocurrencies)
+	  ("https://sathyabh.at/index.xml" blog tech)
+	  ("https://sathyasays.com/index.xml" blog tech)
+	  ("http://philhart.com/rss.xml" astronomy science)
+	  ("https://apod.nasa.gov/apod.rss" astronomy science)
+	  ("https://www.peterzelinka.com/blog.rss"  astronomy science)
           ))
   :bind ("C-c e" . elfeed))
 
