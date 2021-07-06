@@ -287,3 +287,6 @@ buffer even if one already exists."
   (setq org-brain-title-max-length 12)
   (setq org-brain-include-file-entries t
 	org-brain-file-entries-use-title t))
+
+(use-package dockerfile-mode
+  :mode "Dockerfile\\'")
