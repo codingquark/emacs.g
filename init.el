@@ -89,7 +89,11 @@
 
 (use-package dired
   :defer t
-  :config (setq dired-listing-switches "-alh"))
+  :config
+  (setq dired-listing-switches "-alh")
+  (setq dired-use-ls-dired nil)
+  :hook ((dired-mode . dired-hide-details-mode)
+         (dired-mode . hl-line-mode)))
 
 (use-package eldoc
   :when (version< "25" emacs-version)
@@ -196,3 +200,4 @@
 ;; indent-tabs-mode: nil
 ;; End:
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
