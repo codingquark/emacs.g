@@ -21,16 +21,34 @@
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = git@github.com:dgutov/diff-hl.git
+[submodule "elfeed"]
+	path = lib/elfeed
+	url = https://github.com/skeeto/elfeed
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
 	url = git@github.com:magit/emacsql.git
+[submodule "envrc"]
+	path = lib/envrc
+	url = https://github.com/purcell/envrc
 [submodule "epkg"]
 	path = lib/epkg
 	url = git@github.com:emacscollective/epkg.git
+[submodule "exec-path-from-shell"]
+	path = lib/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = git@github.com:magit/git-modes.git
+[submodule "inheritenv"]
+	path = lib/inheritenv
+	url = https://github.com/purcell/inheritenv
+[submodule "ledger-mode"]
+	path = lib/ledger-mode
+	url = https://github.com/ledger/ledger-mode
+[submodule "lin"]
+	path = lib/lin
+	url = git@github.com:emacsmirror/lin.git
 [submodule "llama"]
 	path = lib/llama
 	url = https://git.sr.ht/~tarsius/llama
@@ -38,6 +56,12 @@
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
 	url = git@github.com:magit/magit.git
+[submodule "orderless"]
+	path = lib/orderless
+	url = https://github.com/oantolin/orderless
+[submodule "selectrum"]
+	path = lib/selectrum
+	url = https://github.com/radian-software/selectrum
 [submodule "sqlite3"]
 	build-step = make
 	path = lib/sqlite3
