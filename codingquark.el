@@ -177,7 +177,7 @@
   (set-face-attribute 'fixed-pitch nil
 		      :family (caar face-font-family-alternatives)
 		      :height 125)
-  ;; Following is taking from
+  ;; Following is taken from
   ;; https://gist.github.com/idcrook/9eef475e0addc019f241850d92cfd763
   (set-fontset-font "fontset-default"
 		    'unicode
