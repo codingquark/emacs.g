@@ -261,3 +261,29 @@ Image types are symbols like `xbm' or `jpeg'."
       nil
     (and (fboundp 'init-image-library)
          (init-image-library type))))
+
+(use-package denote
+  :hook (find-file . denote-link-buttonize-buffer)
+  :bind (
+	 ("C-c n j" . cq/create-denote-journal-entry)
+	 ("C-c n n" . denote)
+	 ("C-c n N" . denote-type)
+	 ("C-c n i" . denote-link)
+	 ("C-c n I" . denote-link-add-links)
+	 ("C-c n b" . denote-link-backlinks)
+	 ("C-c n f f" . denote-link-find-file)
+	 ("C-c n f b" . denote-link-find-backlink)
+	 ("C-c n r" . denote-rename-file)
+	 ("C-c n R" . denote-rename-file-using-front-matter))
+  :config
+  (setq crm-separator ",")
+  (setq denote-directory "~/Documents/notes")
+  (setq denote-infer-keywords t)
+  (setq denote-sort-keywords t)
+  (setq denote-file-type 'text)
+  (setq denote-prompts '(title keywords))
+  (defun cq/create-denote-journal-entry ()
+    (interactive)
+    (denote
+     (denote-title-prompt)
+     '("journal"))))
