@@ -82,6 +82,9 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless
+[submodule "projectile"]
+	path = lib/projectile
+	url = https://github.com/bbatsov/projectile
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el
