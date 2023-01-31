@@ -83,6 +83,9 @@
 	  ("https://www.overcomingbias.com/feed" blog rationality science)))
   :bind ("C-c e" . elfeed))
 
+(use-package dired
+  :hook (dired-mode . denote-dired-mode))
+
 (use-package dired-aux
   :config
   (setq dired-isearch-filenames 'dwim)
