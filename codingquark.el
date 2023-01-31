@@ -287,3 +287,9 @@ Image types are symbols like `xbm' or `jpeg'."
     (denote
      (denote-title-prompt)
      '("journal"))))
+
+(use-package projectile
+  :bind-keymap ("C-x p" . projectile-command-map)
+  :config
+  (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
+  (setq projectile-indexing-method 'alien))
