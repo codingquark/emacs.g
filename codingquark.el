@@ -306,6 +306,6 @@ Image types are symbols like `xbm' or `jpeg'."
 
 (use-package org-alert
   :config
-  (setq org-alert-interval 60)
+  (setq org-alert-interval 300)
   (setq org-alert-notification-title "Reminder")
   (org-alert-enable))
