@@ -16,11 +16,12 @@
 
 (use-package elfeed
   :hook ((elfeed-search-mode . lin-mode))
-  :config
-  (setq elfeed-use-curl t)
-  (setq elfeed-curl-max-connections 20)
-  (setq elfeed-search-title-max-width 80)
-  (setq elfeed-feeds
+  :bind ("C-c e" . elfeed)
+  :custom
+  (elfeed-use-curl t)
+  (elfeed-curl-max-connections 20)
+  (elfeed-search-title-max-width 80)
+  (elfeed-feeds
         '(("https://cjb.sh/articles/feed.xml" blog emacs)
           ("http://planet.emacslife.com/atom.xml" blog emacs planet)
           "https://babbagefiles.xyz/posts/atom.xml"
@@ -80,27 +81,26 @@
 	  ("https://gretzuni.com/atom" emacs philosophy uncertain)
 	  ("https://abaaonline.blogspot.com/atom.xml" blog astronomy science)
 	  ("https://geohot.github.io/blog/feed.xml" blog tech science)
-	  ("https://www.overcomingbias.com/feed" blog rationality science)))
-  :bind ("C-c e" . elfeed))
+	  ("https://www.overcomingbias.com/feed" blog rationality science))))
 
 (use-package dired
   :hook (dired-mode . denote-dired-mode))
 
 (use-package dired-aux
-  :config
-  (setq dired-isearch-filenames 'dwim)
-  (setq dired-create-destination-dirs 'ask)
-  (setq dired-vc-rename-file t))
+  :custom
+  (dired-isearch-filenames 'dwim)
+  (dired-create-destination-dirs 'ask)
+  (dired-vc-rename-file t))
 
 (use-package ibuffer
-  :config
-  (setq ibuffer-use-other-window nil)
-  (setq ibuffer-show-empty-filter-groups nil)
-  (setq ibuffer-movement-cycle nil)
-  (setq ibuffer-use-header-line t)
-  (setq ibuffer-default-sorting-mode 'filename/process)
   :bind (("C-x C-b" . ibuffer))
-  :hook (ibuffer-mode . hl-line-mode))
+  :hook (ibuffer-mode . hl-line-mode)
+  :custom
+  (ibuffer-use-other-window nil)
+  (ibuffer-show-empty-filter-groups nil)
+  (ibuffer-movement-cycle nil)
+  (ibuffer-use-header-line t)
+  (ibuffer-default-sorting-mode 'filename/process))
 
 (use-package window
   :bind (("s-n" . next-buffer)
@@ -116,35 +116,36 @@
          ("s-q" . window-toggle-side-windows)))
 
 (use-package battery
+  :hook (after-init . display-battery-mode)
   :config
   (setq battery-mode-line-format " [%b%p%%]")
   (setq battery-mode-line-limit 95)
   (setq battery-update-interval 180)
   (setq battery-load-low 20)
-  (setq battery-load-critical 10)
-  :hook (after-init . display-battery-mode))
+  (setq battery-load-critical 10))
 
 (use-package time
+  :hook (after-init . display-time-mode)
   :config
   (setq display-time-format "%H:%M  %Y-%m-%d")
   (setq display-time-interval 60)
   (setq display-time-mail-directory nil)
-  (setq display-time-default-load-average nil)
-  :hook (after-init . display-time-mode))
+  (setq display-time-default-load-average nil))
 
 (use-package emacs
+  :hook (after-init . window-divider-mode)
+  :bind (("s-k" . kill-buffer))
   :config
   (setq window-divider-default-right-width 1)
   (setq window-divider-default-bottom-width 1)
   (setq window-divider-default-places 'right-only)
   (setq gc-cons-threshold 100000000)  ;; for lsp-mode
-  (setq read-process-output-max (* 1024 1024)) ;; 1mb for lsp-mode
-  :hook (after-init . window-divider-mode)
-  :bind (("s-k" . kill-buffer)))
+  (setq read-process-output-max (* 1024 1024))) ;; 1mb for lsp-mode)
 
 (use-package fringe
   :config
   (fringe-mode nil)
+  :custom
   (setq-default fringes-outside-margins nil)
   (setq-default indicate-buffer-boundaries 'left)
   (setq-default indicate-empty-lines nil)
@@ -175,8 +176,7 @@
                       :width 'semi-condensed
                       :height 125)
   (set-face-attribute 'variable-pitch nil
-		      :family (cadar face-font-family-alternatives)
-		      :height 120)
+		      :family (cadar face-font-family-alternatives))
   (set-face-attribute 'fixed-pitch nil
 		      :family (caar face-font-family-alternatives)
 		      :height 125)
@@ -297,14 +297,11 @@ Image types are symbols like `xbm' or `jpeg'."
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
   (setq projectile-indexing-method 'alien))
 
-(use-package alert
-  :config
-  (if (eq system-type 'darwin)
-      (setq
-       ;; alert-default-style 'notifier
-       alert-default-style 'osx-notifier)))
-
 (use-package org-alert
+  :custom (if (eq system-type 'darwin)
+	      (setq
+	       ;; alert-default-style 'notifier
+	       alert-default-style 'osx-notifier))
   :config
   (setq org-alert-interval 300)
   (setq org-alert-notification-title "Reminder")
