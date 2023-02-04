@@ -296,3 +296,16 @@ Image types are symbols like `xbm' or `jpeg'."
   :config
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
   (setq projectile-indexing-method 'alien))
+
+(use-package alert
+  :config
+  (if (eq system-type 'darwin)
+      (setq
+       ;; alert-default-style 'notifier
+       alert-default-style 'osx-notifier)))
+
+(use-package org-alert
+  :config
+  (setq org-alert-interval 60)
+  (setq org-alert-notification-title "Reminder")
+  (org-alert-enable))
