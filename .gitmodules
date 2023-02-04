@@ -1,6 +1,9 @@
 [borg]
 	pushDefault = locutus
 	collective = emacsg
+[submodule "alert"]
+	path = lib/alert
+	url = https://github.com/jwiegley/alert
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = git@github.com:emacscollective/auto-compile.git
@@ -82,6 +85,9 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless
+[submodule "org-alert"]
+	path = lib/org-alert
+	url = https://github.com/spegoraro/org-alert
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
