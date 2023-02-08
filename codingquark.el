@@ -81,7 +81,8 @@
 	  ("https://gretzuni.com/atom" emacs philosophy uncertain)
 	  ("https://abaaonline.blogspot.com/atom.xml" blog astronomy science)
 	  ("https://geohot.github.io/blog/feed.xml" blog tech science)
-	  ("https://www.overcomingbias.com/feed" blog rationality science))))
+	  ("https://www.overcomingbias.com/feed" blog rationality science)
+	  ("https://aswathdamodaran.blogspot.com/feeds/posts/default" blog finance))))
 
 (use-package dired
   :hook (dired-mode . denote-dired-mode))
