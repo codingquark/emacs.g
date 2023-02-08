@@ -299,11 +299,11 @@ Image types are symbols like `xbm' or `jpeg'."
   (setq projectile-indexing-method 'alien))
 
 (use-package org-alert
-  :custom (if (eq system-type 'darwin)
-	      (setq
-	       ;; alert-default-style 'notifier
-	       alert-default-style 'osx-notifier))
   :config
+  (if (eq system-type 'darwin)
+      (setq
+       ;; alert-default-style 'notifier
+       alert-default-style 'osx-notifier))
   (setq org-alert-interval 300)
   (setq org-alert-notification-title "Reminder")
   (org-alert-enable))
