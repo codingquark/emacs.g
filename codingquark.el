@@ -305,5 +305,7 @@ Image types are symbols like `xbm' or `jpeg'."
        ;; alert-default-style 'notifier
        alert-default-style 'osx-notifier))
   (setq org-alert-interval 300)
+  (setq org-alert-notify-cutoff 5)
+  (setq org-alert-notify-after-event-cutoff 10)
   (setq org-alert-notification-title "Reminder")
   (org-alert-enable))
