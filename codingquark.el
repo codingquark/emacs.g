@@ -56,7 +56,7 @@
 	  ("https://www.murilopereira.com/index.xml" blog emacs)
 	  ("https://www.scottaaronson.blog?feed=rss2" uncertain)
 	  ("https://www.hamvocke.com/feed.xml" blog uncertain)
-	  ("https://world.hey.com/dhh/feed.atom" blog uncertain)
+	  ("https://world.hey.com/dhh/feed.atom" blog)
 	  ("https://medium.com/feed/@@nic__carter" blog cryptocurrencies)
 	  ("https://sathyabh.at/index.xml" blog tech)
 	  ("https://sathyasays.com/index.xml" blog tech)
