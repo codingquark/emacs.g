@@ -30,6 +30,9 @@
 [submodule "elfeed"]
 	path = lib/elfeed
 	url = https://github.com/skeeto/elfeed
+[submodule "elpher"]
+	path = lib/elpher
+	url = https://thelambdalab.xyz/git/elpher.git
 [submodule "emacsql"]
 	no-byte-compile = emacsql-pg.el
 	path = lib/emacsql
