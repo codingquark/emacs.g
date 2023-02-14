@@ -166,29 +166,6 @@
     (electric-quote-mode 1))
   :hook (after-init . cq/electric-pair-mode-hook))
 
-(use-package faces
-  :ensure nil
-  :custom
-  (face-font-family-alternatives '(("SF Mono" "SF Pro" "Iosevka" "DejaVu Sans Mono" "Monospace")))
-  :init
-  (set-face-attribute 'default nil
-                      :family (caar face-font-family-alternatives)
-                      :weight 'regular
-                      :width 'semi-condensed
-                      :height 125)
-  (set-face-attribute 'variable-pitch nil
-		      :family (cadar face-font-family-alternatives))
-  (set-face-attribute 'fixed-pitch nil
-		      :family (caar face-font-family-alternatives)
-		      :height 125)
-  ;; Following is taken from
-  ;; https://gist.github.com/idcrook/9eef475e0addc019f241850d92cfd763
-  (set-fontset-font "fontset-default"
-		    'unicode
-		    "Apple Color Emoji"
-		    nil
-		    'prepend))
-
 (use-package org
   :bind (("C-c c" . org-capture)
 	 ("C-c a" . org-agenda))
