@@ -297,6 +297,8 @@ Image types are symbols like `xbm' or `jpeg'."
     (revert-buffer (dired denote-directory))))
 
 (use-package projectile
+  :init
+  (projectile-mode +1)
   :bind-keymap ("C-x p" . projectile-command-map)
   :config
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
