@@ -171,19 +171,35 @@
 	 ("C-c a" . org-agenda))
   :hook ((org-mode . auto-fill-mode)
 	 (org-agenda-mode . hl-line-mode)
-	 (org-agenda-mode . lin-mode))
+	 (org-agenda-mode . lin-mode)
+	 (org-store-link-functions . cq/org-elfeed-entry-store-link))
   :config
   (require 'org-protocol)
   (setq org-directory "~/Documents/org")
   (setq org-agenda-files (list (concat org-directory "/productivity/todo.org")))
   (setq org-archive-location (concat org-directory "/productivity/archive.org::* From %s"))
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline (lambda () (concat org-directory "/productivity/todo.org")) "Inbox")
+        '(("t" "Todo" entry (file+headline
+			     (lambda () (concat org-directory "/productivity/todo.org"))
+			     "Inbox")
            "* TODO %? %^G\n %i\n %a %u")
-	  ("c" "Todo" entry (file+headline (lambda () (concat org-directory "/productivity/todo.org")) "Inbox")
-           "* TODO %?%a\n  %u")))
-  (setq org-agenda-custom-commands
-	'(("i" "Inbox" tags-todo "inbox")))
+	  ("c" "Todo" entry (file+headline
+			     (lambda () (concat org-directory "/productivity/todo.org"))
+			     "Inbox")
+           "* TODO %?%a\n  %u")
+	  ("l" "Elfeed reading list" entry (file+headline
+					    (lambda () (concat
+						   (denote-directory)
+						   "20230206T124634--reading-list__lists_productivity.org"))
+					    "Reading list")
+            "* TODO %a \n %t")))
+  (defun cq/org-elfeed-entry-store-link ()
+    (when elfeed-show-entry
+      (let* ((link (elfeed-entry-link elfeed-show-entry))
+             (title (elfeed-entry-title elfeed-show-entry)))
+	(org-link-store-props
+	 :link link
+	 :description title))))
   (setq org-use-speed-commands t))
 
 (define-key key-translation-map (kbd "C-x 8 $") (kbd "₹"))
