@@ -304,3 +304,12 @@ Image types are symbols like `xbm' or `jpeg'."
   (setq org-alert-notify-after-event-cutoff 10)
   (setq org-alert-notification-title "Reminder")
   (org-alert-enable))
+
+(use-package eww
+  :config
+  (defun cq/search-wiktionary ()
+    (interactive)
+    (let ((word (if (use-region-p)
+		    (buffer-substring-no-properties (region-beginning) (region-end))
+		  (read-string "Wiktionary lookup: "))))
+      (eww (concat "https://en.wiktionary.org/wiki/" word)))))
