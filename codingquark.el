@@ -297,8 +297,8 @@ Image types are symbols like `xbm' or `jpeg'."
   :config
   (if (eq system-type 'darwin)
       (setq
-       ;; alert-default-style 'notifier
-       alert-default-style 'osx-notifier))
+       alert-default-style 'osx-notifier)
+    (setq alert-default-style 'libnotify))
   (setq org-alert-interval 300)
   (setq org-alert-notify-cutoff 5)
   (setq org-alert-notify-after-event-cutoff 10)
