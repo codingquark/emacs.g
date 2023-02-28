@@ -182,13 +182,13 @@
 	  ("c" "Todo" entry (file+headline
 			     (lambda () (concat org-directory "/productivity/todo.org"))
 			     "Inbox")
-           "* TODO %?%a\n  %u")
+           "* TODO %?%a\n %u")
 	  ("l" "Elfeed reading list" entry (file+headline
 					    (lambda () (concat
 						   (denote-directory)
 						   "20230206T124634--reading-list__lists_productivity.org"))
 					    "Reading list")
-            "* TODO %a \n %t")))
+            "* TODO %a\n %t")))
   (defun cq/org-elfeed-entry-store-link ()
     (when elfeed-show-entry
       (let* ((link (elfeed-entry-link elfeed-show-entry))
