@@ -110,7 +110,8 @@
          ("s-5" . delete-frame)
          ("C-x _" . balance-windows)
          ("C-x +" . balance-windows-area)
-         ("s-q" . window-toggle-side-windows)))
+         ("s-q" . window-toggle-side-windows)
+	 ("s-u" . revert-buffer)))
 
 (use-package battery
   :hook (after-init . display-battery-mode)
