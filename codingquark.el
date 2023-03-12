@@ -211,6 +211,10 @@
   :init
   (vertico-mode))
 
+(use-package marginalia
+  :init
+  (marginalia-mode))
+
 (use-package python
   :custom
   (python-shell-interpreter "python3"))
