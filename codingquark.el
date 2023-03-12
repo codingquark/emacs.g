@@ -207,14 +207,9 @@
 
 (use-package orderless)
 
-(use-package selectrum
+(use-package vertico
   :init
-  (selectrum-mode +1)
-  :custom
-  (selectrum-max-window-height 3)
-  (selectrum-fix-vertical-window-height t)
-  :config
-  (setq completion-styles '(orderless)))
+  (vertico-mode))
 
 (use-package python
   :custom
