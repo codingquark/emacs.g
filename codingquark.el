@@ -209,7 +209,13 @@
 
 (use-package vertico
   :init
-  (vertico-mode))
+  (vertico-mode)
+  (setq vertico-count 5))
+
+(use-package vertico-reverse
+  :after vertico
+  :init
+  (vertico-reverse-mode))
 
 (use-package marginalia
   :init
