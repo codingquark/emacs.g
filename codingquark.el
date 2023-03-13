@@ -330,4 +330,4 @@ Image types are symbols like `xbm' or `jpeg'."
     (let ((word (if (use-region-p)
 		    (buffer-substring-no-properties (region-beginning) (region-end))
 		  (read-string "Wiktionary lookup: "))))
-      (eww (concat "https://en.wiktionary.org/wiki/" word)))))
+      (eww (concat "https://en.wiktionary.org/wiki/" word) 4))))
