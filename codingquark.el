@@ -308,10 +308,19 @@ Image types are symbols like `xbm' or `jpeg'."
       (setq
        alert-default-style 'osx-notifier)
     (setq alert-default-style 'libnotify))
-  (setq org-alert-interval 300)
+  (defun org-alert--dispatch ()
+    (let* ((entry (org-alert--parse-entry))
+	   (head (car entry))
+	   (time (cadr entry)))
+      (if time
+	  (when (org-alert--check-time time)
+	    (alert (concat time ": " head) :title org-alert-notification-title)))))
+  (setq org-alert-interval 30)
   (setq org-alert-notify-cutoff 5)
   (setq org-alert-notify-after-event-cutoff 10)
   (setq org-alert-notification-title "Reminder")
+  (setq org-alert-time-match-string
+      "\\(?:SCHEDULED\\|DEADLINE\\):.*?<.*?\\([0-9]\\{2\\}:[0-9]\\{2\\}\\).*>")
   (org-alert-enable))
 
 (use-package eww
