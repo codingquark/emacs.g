@@ -324,7 +324,7 @@ Image types are symbols like `xbm' or `jpeg'."
   (setq org-alert-notify-after-event-cutoff 10)
   (setq org-alert-notification-title "Reminder")
   (setq org-alert-time-match-string
-      "\\(?:SCHEDULED\\|DEADLINE\\):.*?<.*?\\([0-9]\\{2\\}:[0-9]\\{2\\}\\).*>")
+	"\\(?:SCHEDULED\\|DEADLINE\\):.*?<.*?\\([0-9]\\{2\\}:[0-9]\\{2\\}\\).*>")
   (org-alert-enable))
 
 (use-package eww
