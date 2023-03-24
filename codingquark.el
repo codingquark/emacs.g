@@ -277,7 +277,8 @@ Image types are symbols like `xbm' or `jpeg'."
 	 ("C-c n f b" . denote-link-find-backlink)
 	 ("C-c n r" . denote-rename-file)
 	 ("C-c n R" . denote-rename-file-using-front-matter)
-	 ("C-c n d" . cq/open-denote-directory))
+	 ("C-c n d" . cq/open-denote-directory)
+	 ("C-c n ." . cq/insert-time-stamp))
   :config
   (setq crm-separator ",")
   (setq denote-directory "~/Documents/notes")
@@ -292,7 +293,10 @@ Image types are symbols like `xbm' or `jpeg'."
      '("journal")))
   (defun cq/open-denote-directory ()
     (interactive)
-    (revert-buffer (dired denote-directory))))
+    (revert-buffer (dired denote-directory)))
+  (defun cq/insert-time-stamp ()
+    (interactive)
+    (insert (current-time-string))))
 
 (use-package projectile
   :init
