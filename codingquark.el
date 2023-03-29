@@ -329,9 +329,11 @@ Image types are symbols like `xbm' or `jpeg'."
 
 (use-package eww
   :config
-  (defun cq/search-wiktionary ()
+  (defun cq/search-word ()
     (interactive)
     (let ((word (if (use-region-p)
 		    (buffer-substring-no-properties (region-beginning) (region-end))
-		  (read-string "Wiktionary lookup: "))))
-      (eww (concat "https://en.wiktionary.org/wiki/" word) 4))))
+		  (read-string "Word lookup: "))))
+      (if (eq system-type 'darwin)
+	  (shell-command (format "open dict://\"%s\"" word))
+	  (eww (concat "https://en.wiktionary.org/wiki/" word) 4)))))
