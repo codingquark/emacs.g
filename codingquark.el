@@ -335,5 +335,5 @@ Image types are symbols like `xbm' or `jpeg'."
 		    (buffer-substring-no-properties (region-beginning) (region-end))
 		  (read-string "Word lookup: "))))
       (if (eq system-type 'darwin)
-	  (shell-command (format "open dict://\"%s\"" word))
+	  (shell-command (format "open dict://%s" (shell-quote-argument word)))
 	  (eww (concat "https://en.wiktionary.org/wiki/" word) 4)))))
