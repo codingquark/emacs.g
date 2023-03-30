@@ -250,6 +250,7 @@
   (setq ledger-report-native-highlighting-arguments '("--color=always")))
 
 (use-package envrc
+  :diminish
   :init (envrc-global-mode))
 
 (use-package lin)
@@ -302,6 +303,7 @@ Image types are symbols like `xbm' or `jpeg'."
   :init
   (projectile-mode +1)
   :bind-keymap ("C-x p" . projectile-command-map)
+  :diminish
   :config
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
   (setq projectile-indexing-method 'alien))
@@ -336,4 +338,28 @@ Image types are symbols like `xbm' or `jpeg'."
 		  (read-string "Word lookup: "))))
       (if (eq system-type 'darwin)
 	  (shell-command (format "open dict://%s" (shell-quote-argument word)))
-	  (eww (concat "https://en.wiktionary.org/wiki/" word) 4)))))
+	(eww (concat "https://en.wiktionary.org/wiki/" word) 4)))))
+
+(use-package reveal
+  :diminish)
+
+(use-package outline
+  :diminish outline-minor-mode)
+
+(use-package eldoc
+  :diminish)
+
+(use-package abbrev
+  :diminish abbrev-mode)
+
+(use-package autorevert
+  :diminish auto-revert-mode)
+
+(use-package olivetti
+  :diminish (olivetti-mode " ✍️"))
+
+(use-package face-remap
+  :diminish (buffer-face-mode text-scale-mode))
+
+(use-package simple
+  :diminish visual-line-mode)
