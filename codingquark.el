@@ -289,9 +289,17 @@ Image types are symbols like `xbm' or `jpeg'."
   (setq denote-prompts '(title keywords))
   (defun cq/create-denote-journal-entry ()
     (interactive)
-    (denote
-     (denote-title-prompt)
-     '("journal")))
+    (let ((journals (denote-directory-files-matching-regexp
+		     (concat (format-time-string "%Y%m%d")
+			     "T"
+			     "[0-9]+"
+			     "--"
+			     "diary__journal.txt$"))))
+      (if journals
+	  (find-file (car journals))
+	(denote
+	 "diary"
+	 '("journal")))))
   (defun cq/open-denote-directory ()
     (interactive)
     (revert-buffer (dired denote-directory)))
