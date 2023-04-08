@@ -4,6 +4,9 @@
 [submodule "alert"]
 	path = lib/alert
 	url = https://github.com/jwiegley/alert
+[submodule "auctex"]
+	path = lib/auctex
+	url = git@github.com:emacsmirror/auctex.git
 [submodule "auto-compile"]
 	path = lib/auto-compile
 	url = git@github.com:emacscollective/auto-compile.git
