@@ -18,6 +18,7 @@
   (setq inhibit-startup-echo-area-message "locutus")
   (setq initial-buffer-choice t)
   (setq initial-scratch-message "")
+  (setq initial-major-mode 'fundamental-mode)
   (when (fboundp 'scroll-bar-mode)
     (scroll-bar-mode 0))
   (when (fboundp 'tool-bar-mode)
