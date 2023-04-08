@@ -371,3 +371,44 @@ Image types are symbols like `xbm' or `jpeg'."
 
 (use-package simple
   :diminish visual-line-mode)
+(use-package tex-site                   ; auctex
+  :load-path "lib/auctex/"
+  :defines (latex-help-cmd-alist latex-help-file)
+  :mode ("\\.tex\\'" . TeX-latex-mode)
+  :init
+  (setq reftex-plug-into-AUCTeX t)
+  (setenv "PATH" (concat "/Library/TeX/texbin:"
+                         (getenv "PATH")))
+  (add-to-list 'exec-path "/Library/TeX/texbin")
+  :config
+  (defun latex-help-get-cmd-alist ()    ;corrected version:
+    "Scoop up the commands in the index of the latex info manual.
+   The values are saved in `latex-help-cmd-alist' for speed."
+    ;; mm, does it contain any cached entries
+    (if (not (assoc "\\begin" latex-help-cmd-alist))
+        (save-window-excursion
+          (setq latex-help-cmd-alist nil)
+          (Info-goto-node (concat latex-help-file "Command Index"))
+          (goto-char (point-max))
+          (while (re-search-backward "^\\* \\(.+\\): *\\(.+\\)\\." nil t)
+            (let ((key (buffer-substring (match-beginning 1) (match-end 1)))
+                  (value (buffer-substring (match-beginning 2)
+                                           (match-end 2))))
+              (add-to-list 'latex-help-cmd-alist (cons key value))))))
+    latex-help-cmd-alist)
+
+  ;; (use-package ebib
+  ;;   :load-path "site-lisp/ebib"
+  ;;   :preface
+  ;;   (use-package parsebib :load-path "site-lisp/parsebib"))
+
+  (use-package latex
+    :defer t
+    :config
+    (use-package preview)
+    (add-hook 'LaTeX-mode-hook 'reftex-mode)
+    (info-lookup-add-help :mode 'LaTeX-mode
+                          :regexp ".*"
+                          :parse-rule "\\\\?[a-zA-Z]+\\|\\\\[^a-zA-Z]"
+                          :doc-spec '(("(latex2e)Concept Index" )
+                                      ("(latex2e)Command Index")))))
