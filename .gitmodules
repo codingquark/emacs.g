@@ -114,6 +114,9 @@
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
+[submodule "rust-mode"]
+	path = lib/rust-mode
+	url = https://github.com/rust-lang/rust-mode
 [submodule "s"]
 	path = lib/s
 	url = https://github.com/magnars/s.el
@@ -127,6 +130,16 @@
 [submodule "transient"]
 	path = lib/transient
 	url = git@github.com:magit/transient.git
+[submodule "tree-sitter"]
+	path = lib/tree-sitter
+	url = https://github.com/emacs-tree-sitter/elisp-tree-sitter
+	load-path = .
+	load-path = ./core
+	load-path = ./lisp
+	load-path = ./langs
+[submodule "tree-sitter-langs"]
+	path = lib/tree-sitter-langs
+	url = https://github.com/emacs-tree-sitter/tree-sitter-langs
 [submodule "treepy"]
 	path = lib/treepy
 	url = git@github.com:volrath/treepy.el.git
