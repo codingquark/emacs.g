@@ -304,8 +304,10 @@ Image types are symbols like `xbm' or `jpeg'."
     (interactive)
     (revert-buffer (dired denote-directory)))
   (defun cq/insert-time-stamp ()
+    "Insert a timestamp with a newline character."
     (interactive)
-    (insert (current-time-string))))
+    (insert (current-time-string))
+    (newline)))
 
 (use-package projectile
   :init
