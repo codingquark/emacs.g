@@ -260,6 +260,7 @@
   :bind (
 	 ("C-c n j" . cq/create-denote-journal-entry)
 	 ("C-c n n" . denote)
+	 ("C-c n D" . denote-directory)
 	 ("C-c n N" . denote-type)
 	 ("C-c n i" . denote-link)
 	 ("C-c n I" . denote-link-add-links)
@@ -268,8 +269,8 @@
 	 ("C-c n f b" . denote-link-find-backlink)
 	 ("C-c n r" . denote-rename-file)
 	 ("C-c n R" . denote-rename-file-using-front-matter)
-	 ("C-c n d" . cq/open-denote-directory)
-	 ("C-c n ." . cq/insert-time-stamp))
+	 ("C-c n ." . cq/insert-time-stamp)
+	 ("C-c n o" . cq/open-denote-directory))
   :config
   (setq crm-separator ",")
   (setq denote-directory "~/Documents/notes")
