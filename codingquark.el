@@ -255,17 +255,6 @@
   :init (envrc-global-mode))
 
 (use-package lin)
-
-;; https://emacs.stackexchange.com/questions/74289/emacs-28-2-error-in-macos-ventura-image-type-invalid-image-type-svg
-;; overriding image.el function image-type-available-p
-(defun image-type-available-p (type)
-  "Return t if image type TYPE is available.
-Image types are symbols like `xbm' or `jpeg'."
-  (if (eq 'svg type)
-      nil
-    (and (fboundp 'init-image-library)
-         (init-image-library type))))
-
 (use-package denote
   :hook (find-file . denote-link-buttonize-buffer)
   :bind (
