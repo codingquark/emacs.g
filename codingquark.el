@@ -123,6 +123,7 @@
   (setq battery-load-critical 10))
 
 (use-package time
+  :unless (memq window-system '(mac ns))
   :hook (after-init . display-time-mode)
   :config
   (setq display-time-format "%H:%M  %Y-%m-%d")
