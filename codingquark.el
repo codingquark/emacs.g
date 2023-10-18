@@ -400,9 +400,4 @@
     :defer t
     :config
     (use-package preview)
-    (add-hook 'LaTeX-mode-hook 'reftex-mode)
-    (info-lookup-add-help :mode 'LaTeX-mode
-                          :regexp ".*"
-                          :parse-rule "\\\\?[a-zA-Z]+\\|\\\\[^a-zA-Z]"
-                          :doc-spec '(("(latex2e)Concept Index" )
-                                      ("(latex2e)Command Index")))))
+    (add-hook 'LaTeX-mode-hook 'reftex-mode)))
