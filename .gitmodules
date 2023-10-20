@@ -108,9 +108,6 @@
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless
-[submodule "org-alert"]
-	path = lib/org-alert
-	url = https://github.com/spegoraro/org-alert
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
