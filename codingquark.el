@@ -1,6 +1,8 @@
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
   :config
+  ;; This MIGHT be a bad idea, check .zshenv in case of errors
+  (setq exec-path-from-shell-arguments '("-l"))
   (exec-path-from-shell-initialize))
 
 (use-package use-package-core
@@ -84,6 +86,7 @@
   :hook (dired-mode . denote-dired-mode))
 
 (use-package dired-aux
+  :defer t
   :custom
   (dired-isearch-filenames 'dwim)
   (dired-create-destination-dirs 'ask)
@@ -226,6 +229,7 @@
   (marginalia-mode))
 
 (use-package python
+  :defer t
   :custom
   (python-shell-interpreter "python3"))
 
@@ -239,22 +243,24 @@
   (setq lsp-modeline-diagnostics-enable t))
 
 (use-package lsp-python-ms
+  :defer t
   :init (setq lsp-python-ms-auto-install-server t)
   :hook (python-mode . (lambda ()
                          (require 'lsp-python-ms)
                          (lsp-deferred))))
 
-(use-package ledger-mode
-  :config
-  (setq ledger-binary-path (executable-find "hledger"))
-  (setq ledger-mode-should-check-version nil)
-  (setq ledger-report-native-highlighting-arguments '("--color=always")))
+;; (use-package ledger-mode
+;;   :config
+;;   (setq ledger-binary-path "/usr/local/bin/hledger")
+;;   (setq ledger-mode-should-check-version nil)
+;;   (setq ledger-report-native-highlighting-arguments '("--color=always")))
 
 (use-package envrc
   :diminish
   :init (envrc-global-mode))
 
 (use-package lin)
+
 (use-package denote
   :hook (find-file . denote-link-buttonize-buffer)
   :bind (
@@ -309,37 +315,14 @@
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
   (setq projectile-indexing-method 'alien))
 
-(use-package org-alert
-  :config
-  (if (eq system-type 'darwin)
-      (setq
-       alert-default-style 'osx-notifier)
-    (setq alert-default-style 'libnotify))
-  (defun org-alert--dispatch ()
-    (let* ((entry (org-alert--parse-entry))
-	   (head (car entry))
-	   (time (cadr entry)))
-      (if time
-	  (when (org-alert--check-time time)
-	    (alert (concat time ": " head) :title org-alert-notification-title)))))
-  (setq org-alert-interval 30)
-  (setq org-alert-notify-cutoff 5)
-  (setq org-alert-notify-after-event-cutoff 10)
-  (setq org-alert-notification-title "Reminder")
-  (setq org-alert-time-match-string
-	"\\(?:SCHEDULED\\|DEADLINE\\):.*?<.*?\\([0-9]\\{2\\}:[0-9]\\{2\\}\\).*>")
-  (org-alert-enable))
-
-(use-package eww
-  :config
-  (defun cq/search-word ()
+(defun cq/search-word ()
     (interactive)
     (let ((word (if (use-region-p)
                     (buffer-substring-no-properties (region-beginning) (region-end))
                   (read-string "Word lookup: "))))
       (if (eq system-type 'darwin)
           (shell-command (format "open dict://%s" (shell-quote-argument word)))
-        (eww (concat "https://en.wiktionary.org/wiki/" word) 4)))))
+        (eww (concat "https://en.wiktionary.org/wiki/" word) 4))))
 
 (use-package reveal
   :diminish)
