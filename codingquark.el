@@ -176,20 +176,22 @@
 	 (org-store-link-functions . cq/org-elfeed-entry-store-link))
   :config
   (require 'org-protocol)
-  (setq org-directory "~/Documents/org")
-  (setq org-agenda-files (list (concat org-directory "/productivity/todo.org")))
-  (setq org-archive-location (concat org-directory "/productivity/archive.org::* From %s"))
+  (setq org-directory (directory-file-name "~/Documents/org"))
+  (setq org-agenda-files (list (file-name-concat org-directory "productivity" "todo.org")))
+  (setq org-archive-location (string-join
+			      (list (file-name-concat org-directory "productivity" "archive.org")
+				    "::* From %s")))
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline
-			     (lambda () (concat org-directory "/productivity/todo.org"))
+			     (lambda () (file-name-concat org-directory "productivity" "todo.org"))
 			     "Inbox")
            "* TODO %? %^G\n %i\n %a %u")
 	  ("c" "Todo" entry (file+headline
-			     (lambda () (concat org-directory "/productivity/todo.org"))
+			     (lambda () (file-name-concat org-directory "productivity" "todo.org"))
 			     "Inbox")
            "* TODO %?%a\n %u")
 	  ("l" "Elfeed reading list" entry (file+headline
-					    (lambda () (concat
+					    (lambda () (file-name-concat
 						   (denote-directory)
 						   "20230206T124634--reading-list__lists_productivity.org"))
 					    "Reading list")
