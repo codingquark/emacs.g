@@ -244,12 +244,10 @@
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-modeline-diagnostics-enable t))
 
-(use-package lsp-python-ms
-  :defer t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-python-ms)
-                         (lsp-deferred))))
+(use-package lsp-pyright
+  :hook (python-ts-mode . (lambda ()
+                            (require 'lsp-pyright)
+                            (lsp))))
 
 ;; (use-package ledger-mode
 ;;   :config
