@@ -400,7 +400,7 @@
   :defer t
   :config
   (use-package preview)
-  (add-hook 'LaTeX-mode-hook 'reftex-mode)))
+  (add-hook 'LaTeX-mode-hook 'reftex-mode))
 
 (use-package typescript-ts-mode
   :after tree-sitter
