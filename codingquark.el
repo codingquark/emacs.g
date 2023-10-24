@@ -267,15 +267,14 @@
   :init
   (setq lsp-keymap-prefix "s-l")
   :commands (lsp lsp-deferred)
+  :hook ((python-ts-mode . lsp)
+	 (typescript-ts-mode . lsp))
   :config
   (setq lsp-idle-delay 0.500)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-modeline-diagnostics-enable t))
 
-(use-package lsp-pyright
-  :hook (python-ts-mode . (lambda ()
-                            (require 'lsp-pyright)
-                            (lsp))))
+(use-package lsp-pyright)
 
 ;; (use-package ledger-mode
 ;;   :config
@@ -402,6 +401,4 @@
   (use-package preview)
   (add-hook 'LaTeX-mode-hook 'reftex-mode))
 
-(use-package typescript-ts-mode
-  :after tree-sitter
-  :hook (typescript-ts-mode . lsp-deferred))
+(use-package typescript-ts-mode)
