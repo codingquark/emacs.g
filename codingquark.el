@@ -9,13 +9,6 @@
   :custom
   (use-package-enable-imenu-support t))
 
-(load-theme 'modus-operandi)
-(use-package modus-themes
-  :config
-  ;; Load the theme of your choice:
-  (modus-themes-load-operandi) ;; OR (modus-themes-load-vivendi)
-  :bind ("<f5>" . modus-themes-toggle))
-
 (use-package elfeed
   :hook ((elfeed-search-mode . lin-mode))
   :bind ("C-c e" . elfeed)
@@ -142,7 +135,14 @@
   (setq window-divider-default-bottom-width 1)
   (setq window-divider-default-places 'right-only)
   (setq gc-cons-threshold 100000000)  ;; for lsp-mode
-  (setq read-process-output-max (* 1024 1024))) ;; 1mb for lsp-mode)
+  (setq read-process-output-max (* 1024 1024))   ;; 1mb for lsp-mode)
+  (require-theme 'modus-themes) ; `require-theme' is ONLY for the built-in Modus themes
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil)
+  (setq modus-themes-to-toggle '(modus-operandi modus-vivendi))
+
+  (load-theme 'modus-operandi)
+  (define-key global-map (kbd "<f5>") #'modus-themes-toggle))
 
 (use-package fringe
   :config
