@@ -24,6 +24,9 @@
 [submodule "closql"]
 	path = lib/closql
 	url = git@github.com:magit/closql.git
+[submodule "combobulate"]
+	path = lib/combobulate
+	url = https://github.com/mickeynp/combobulate.git
 [submodule "compat"]
 	path = lib/compat
 	url = https://git.sr.ht/~pkal/compat
