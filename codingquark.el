@@ -140,6 +140,14 @@
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil)
   (setq modus-themes-to-toggle '(modus-operandi modus-vivendi))
+  (setq modus-themes-completions
+      '((matches . (bold))
+        (selection . (bold italic))))
+  (setq modus-themes-fringes 'subtle)
+  (setq modus-themes-links '(neutral-underline))
+  (setq modus-themes-prompts '(intense))
+  (setq modus-themes-region '(bg-only accented))
+  ;; TODO Check modus-themes-org-agenda
 
   (load-theme 'modus-operandi)
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle))
