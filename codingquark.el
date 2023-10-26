@@ -457,3 +457,8 @@
            (json-ts-mode . combobulate-mode)
            (typescript-ts-mode . combobulate-mode)
            (tsx-ts-mode . combobulate-mode))))
+
+(use-package rg
+  :init (rg-enable-default-bindings))
+
+(add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
