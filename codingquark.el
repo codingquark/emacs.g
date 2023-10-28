@@ -10,7 +10,6 @@
   (use-package-enable-imenu-support t))
 
 (use-package elfeed
-  :hook ((elfeed-search-mode . lin-mode))
   :bind ("C-c e" . elfeed)
   :custom
   (elfeed-use-curl t)
@@ -180,7 +179,6 @@
 	 ("C-c a" . org-agenda))
   :hook ((org-mode . auto-fill-mode)
 	 (org-agenda-mode . hl-line-mode)
-	 (org-agenda-mode . lin-mode)
 	 (org-store-link-functions . cq/org-elfeed-entry-store-link))
   :config
   (require 'org-protocol)
@@ -275,7 +273,20 @@
   :diminish
   :init (envrc-global-mode))
 
-(use-package lin)
+(use-package lin
+  :init (lin-global-mode t)
+  :config
+  (setq lin-mode-hooks
+        '(dired-mode-hook
+          elfeed-search-mode-hook
+          git-rebase-mode-hook
+          grep-mode-hook
+          ibuffer-mode-hook
+          magit-log-mode-hook
+          occur-mode-hook
+          org-agenda-mode-hook
+	  rg-mode-hook))
+  (lin-global-mode t))
 
 (use-package denote
   :hook (find-file . denote-link-buttonize-buffer)
