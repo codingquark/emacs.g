@@ -259,7 +259,9 @@
   :config
   (setq lsp-idle-delay 0.500)
   (setq lsp-enable-symbol-highlighting nil)
-  (setq lsp-modeline-diagnostics-enable t))
+  (setq lsp-modeline-diagnostics-enable t)
+  (setq lsp-enable-snippet nil))
+
 
 (use-package lsp-pyright)
 
