@@ -276,8 +276,17 @@
 (use-package dap-mode
   :after lsp-mode
   :commands dap-debug
+  :custom
+  (dap-python-debugger 'debugpy)
+  (dap-python-terminal "vterm")
   :config
-  (require 'dap-node))
+  (dap-auto-configure-mode)
+  (require 'dap-node)
+  (require 'dap-python)
+  ;; no support for direnv, the function uses pyenv’s modules if pyenv
+  ;; is found in path
+  (defun dap-python--pyenv-executable-find (command)
+    (executable-find "python")))
 
 ;; (use-package ledger-mode
 ;;   :config
