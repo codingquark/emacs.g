@@ -265,6 +265,20 @@
 
 (use-package lsp-pyright)
 
+;; dap-mode setup
+;; posframe
+;; lsp-docker
+;; -> yaml
+;; bui
+;; lsp-treemacs
+;; -> treemacs
+;; --> pfuture
+(use-package dap-mode
+  :after lsp-mode
+  :commands dap-debug
+  :config
+  (require 'dap-node))
+
 ;; (use-package ledger-mode
 ;;   :config
 ;;   (setq ledger-binary-path "/usr/local/bin/hledger")
