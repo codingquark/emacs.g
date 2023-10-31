@@ -497,4 +497,14 @@
 (use-package rg
   :init (rg-enable-default-bindings))
 
-(add-hook 'prog-mode-hook (lambda () (hl-line-mode 1)))
+(use-package indent-guide
+  :custom-face
+  (indent-guide-face ((t (:foreground "#535353" :slant normal))))
+  :custom
+  (indent-guide-char "|")
+  (indent-guide-threshold 5))
+
+(use-package prog-mode
+  :hook ((prog-mode . (lambda () (hl-line-mode 1)))
+	 (prog-mode . indent-guide-mode)
+	 (prog-mode . flyspell-prog-mode)))
