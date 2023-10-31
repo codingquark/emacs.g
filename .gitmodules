@@ -84,6 +84,9 @@
 [submodule "hydra"]
 	path = lib/hydra
 	url = https://github.com/abo-abo/hydra
+[submodule "indent-guide"]
+	path = lib/indent-guide
+	url = https://github.com/zk-phi/indent-guide
 [submodule "inheritenv"]
 	path = lib/inheritenv
 	url = https://github.com/purcell/inheritenv
