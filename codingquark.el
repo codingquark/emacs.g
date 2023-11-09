@@ -517,6 +517,15 @@
   (indent-guide-char "│")
   (indent-guide-threshold 5))
 
+(use-package ispell
+  :defer t
+  :custom
+  ;; Change the ordering of dicts used in echant’s config
+  (ispell-program-name "enchant-2"))
+
+(use-package flyspell
+  :diminish)
+
 (use-package prog-mode
   :hook ((prog-mode . (lambda () (hl-line-mode 1)))
 	 (prog-mode . indent-guide-mode)
