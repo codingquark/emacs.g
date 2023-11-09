@@ -44,6 +44,9 @@
 	no-makeinfo = dash-template.texi
 	path = lib/dash
 	url = git@github.com:magnars/dash.el.git
+[submodule "deferred"]
+	path = lib/deferred
+	url = https://github.com/kiwanami/emacs-deferred
 [submodule "denote"]
 	path = lib/denote
 	url = git@github.com:emacsmirror/denote.git
@@ -78,6 +81,9 @@
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = git@github.com:magit/git-modes.git
+[submodule "graphql-ts-mode"]
+	path = lib/graphql-ts-mode
+	url = https://github.com/emacsmirror/graphql-ts-mode
 [submodule "ht"]
 	path = lib/ht
 	url = https://github.com/Wilfred/ht.el
@@ -117,18 +123,34 @@
 	no-byte-compile = lisp/magit-libgit.el
 	path = lib/magit
 	url = git@github.com:magit/magit.git
+[submodule "magit-delta"]
+	path = lib/magit-delta
+	url = https://github.com/dandavison/magit-delta
 [submodule "marginalia"]
 	path = lib/marginalia
 	url = https://github.com/minad/marginalia
 [submodule "markdown-mode"]
 	path = lib/markdown-mode
 	url = https://github.com/jrblevin/markdown-mode
+[submodule "mastodon"]
+	path = lib/mastodon
+	url = git@github.com:emacsmirror/mastodon.git
+[submodule "notmuch"]
+	path = lib/notmuch
+	load-path = emacs/
+	url = https://git.notmuchmail.org/git/notmuch
+[submodule "notmuch-indicator"]
+	path = lib/notmuch-indicator
+	url = git@github.com:emacsmirror/notmuch-indicator.git
 [submodule "olivetti"]
 	path = lib/olivetti
 	url = https://github.com/rnkn/olivetti
 [submodule "orderless"]
 	path = lib/orderless
 	url = https://github.com/oantolin/orderless
+[submodule "persist"]
+	path = lib/persist
+	url = git@github.com:emacsmirror/persist.git
 [submodule "pfuture"]
 	path = lib/pfuture
 	url = https://github.com/Alexander-Miller/pfuture
@@ -138,6 +160,12 @@
 [submodule "projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile
+[submodule "racket-mode"]
+	path = lib/racket-mode
+	url = https://github.com/greghendershott/racket-mode
+[submodule "request"]
+	path = lib/request
+	url = https://github.com/tkf/emacs-request
 [submodule "rg"]
 	path = lib/rg
 	url = https://github.com/dajva/rg.el
@@ -186,6 +214,9 @@
 [submodule "with-editor"]
 	path = lib/with-editor
 	url = git@github.com:magit/with-editor.git
+[submodule "xterm-color"]
+	path = lib/xterm-color
+	url = https://github.com/atomontage/xterm-color
 [submodule "yaml"]
 	path = lib/yaml
 	url = https://github.com/zkry/yaml.el
