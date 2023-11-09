@@ -458,7 +458,8 @@
 	       ;; (toml "https://github.com/tree-sitter/tree-sitter-toml")
 	       (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
 	       (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-	       (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+	       (yaml "https://github.com/ikatyang/tree-sitter-yaml")
+	       (graphql "https://github.com/bkegley/tree-sitter-graphql")))
       (add-to-list 'treesit-language-source-alist grammar)
       ;; Only install `grammar' if we don't already have it
       ;; installed. However, if you want to *update* a grammar then
