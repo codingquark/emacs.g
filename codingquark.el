@@ -433,7 +433,9 @@
     (use-package preview)
     (add-hook 'LaTeX-mode-hook 'reftex-mode)))
 
-(use-package typescript-ts-mode)
+(use-package typescript-ts-mode
+  :custom
+  (setq typescript-ts-mode-indent-offset 2))
 
 ;; Taken from Mickey’s config!
 (use-package treesit
