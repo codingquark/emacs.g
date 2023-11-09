@@ -530,3 +530,7 @@
   :hook ((prog-mode . (lambda () (hl-line-mode 1)))
 	 (prog-mode . indent-guide-mode)
 	 (prog-mode . flyspell-prog-mode)))
+;; magit-delta deps
+;; - xterm-color
+(use-package magit-delta
+  :hook (magit-mode . magit-delta-mode))
