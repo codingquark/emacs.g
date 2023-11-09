@@ -360,18 +360,18 @@
   (projectile-mode +1)
   :bind-keymap ("C-x p" . projectile-command-map)
   :diminish
-  :config
+  :custom
   (setq projectile-project-search-path '("~/workspace/" "~/.emacs.d/"))
   (setq projectile-indexing-method 'alien))
 
 (defun cq/search-word ()
-    (interactive)
-    (let ((word (if (use-region-p)
-                    (buffer-substring-no-properties (region-beginning) (region-end))
-                  (read-string "Word lookup: "))))
-      (if (eq system-type 'darwin)
-          (shell-command (format "open dict://%s" (shell-quote-argument word)))
-        (eww (concat "https://en.wiktionary.org/wiki/" word) 4))))
+  (interactive)
+  (let ((word (if (use-region-p)
+                  (buffer-substring-no-properties (region-beginning) (region-end))
+                (read-string "Word lookup: "))))
+    (if (eq system-type 'darwin)
+        (shell-command (format "open dict://%s" (shell-quote-argument word)))
+      (eww (concat "https://en.wiktionary.org/wiki/" word) 4))))
 
 (use-package reveal
   :diminish)
