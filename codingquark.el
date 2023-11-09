@@ -281,11 +281,16 @@
 (use-package dap-mode
   :after lsp-mode
   :commands dap-debug
+  :hook (dap-stopped . (lambda (arg)
+			 (call-interactively #'dap-hydra)))
   :custom
   (dap-python-debugger 'debugpy)
   (dap-python-terminal "vterm")
+  (dap-auto-show-output nil)
   :config
-  (dap-auto-configure-mode)
+  ;; Enabling only some features
+  (setq dap-auto-configure-features '(sessions locals breakpoints expressions))
+  ;; (dap-auto-configure-mode)
   (require 'dap-node)
   (require 'dap-python)
   ;; no support for direnv, the function uses pyenv’s modules if pyenv
