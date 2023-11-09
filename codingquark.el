@@ -510,10 +510,11 @@
   :init (rg-enable-default-bindings))
 
 (use-package indent-guide
+  :diminish
   :custom-face
   (indent-guide-face ((t (:foreground "#535353" :slant normal))))
   :custom
-  (indent-guide-char "|")
+  (indent-guide-char "│")
   (indent-guide-threshold 5))
 
 (use-package prog-mode
