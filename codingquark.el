@@ -251,6 +251,9 @@
   :custom
   (python-shell-interpreter "python3"))
 
+(use-package graphql-ts-mode
+  :mode ("\\.graphql\\'" "\\.gql\\'"))
+
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "s-l")
