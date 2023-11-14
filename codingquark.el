@@ -60,7 +60,6 @@
      ("https://protesilaos.com/books.xml" blog philosophy)
      ("https://protesilaos.com/politics.xml" blog politics)
      ("http://tofspot.blogspot.com/feeds/posts/default" blog author scifi)
-     ("https://www.blogger.com/feeds/35485673/posts/default" uncertain productivity)
      ("http://blog.samaltman.com/posts.atom" blog)
      ("https://vitalik.ca/feed.xml" cryptocurrencies blog)
      ("https://news.ycombinator.com/rss" news tech dense hackernews)
