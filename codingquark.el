@@ -338,12 +338,12 @@
 	 ("C-c n R" . denote-rename-file-using-front-matter)
 	 ("C-c n ." . cq/insert-time-stamp))
   :custom
-  (setq denote-directory "~/Documents/notes")
-  (setq denote-infer-keywords t)
-  (setq denote-sort-keywords t)
-  (setq denote-file-type 'text)
-  (setq denote-prompts '(title keywords))
-  (setq denote-journal-extras-title-format 'day-date-month-year)
+  (denote-directory "~/Documents/notes")
+  (denote-infer-keywords t)
+  (denote-sort-keywords t)
+  (denote-file-type 'text)
+  (denote-prompts '(title keywords))
+  (denote-journal-extras-title-format 'day-date-month-year)
   :config
   (setq crm-separator ",")
   (defun cq/open-denote-directory ()
@@ -530,6 +530,9 @@
   :hook ((prog-mode . (lambda () (hl-line-mode 1)))
 	 (prog-mode . indent-guide-mode)
 	 (prog-mode . flyspell-prog-mode)))
+
+(use-package text-mode
+  :hook ((text-mode . flyspell-mode)))
 ;; magit-delta deps
 ;; - xterm-color
 (use-package magit-delta
