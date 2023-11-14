@@ -44,7 +44,6 @@
      "https://yihui.org/en/index.xml"
      "https://supersciencegrl.co.uk/rss.xml"
      ("https://www.solipsys.co.uk/rss.xml" math blog)
-     "https://craphound.com/feed"
      ("https://www.murilopereira.com/index.xml" blog emacs)
      ("https://www.scottaaronson.blog?feed=rss2" uncertain)
      ("https://www.hamvocke.com/feed.xml" blog uncertain)
@@ -73,7 +72,8 @@
      ("https://geohot.github.io/blog/feed.xml" blog tech science)
      ("https://www.overcomingbias.com/feed" blog rationality science)
      ("https://aswathdamodaran.blogspot.com/feeds/posts/default" blog finance)
-     ("https://keepthinking.blog/index.xml" blog emacs))))
+     ("https://keepthinking.blog/index.xml" blog emacs)
+     ("https://lockywolf.net/atom-full.xml" blog emacs))))
 
 (use-package dired
   :hook (dired-mode . denote-dired-mode))
