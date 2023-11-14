@@ -16,7 +16,7 @@
   (elfeed-curl-max-connections 20)
   (elfeed-search-title-max-width 80)
   (elfeed-feeds
-   '(("http://planet.emacslife.com/atom.xml" blog emacs planet)
+   '(("http://planet.emacslife.com/atom.xml" blog emacs dense)
      "https://babbagefiles.xyz/posts/atom.xml"
      ("http://www.shakthimaan.com/news.xml" emacs)
      ("https://blog.steve.fi/index.rss" blog debian)
@@ -64,7 +64,7 @@
      ("https://www.blogger.com/feeds/35485673/posts/default" uncertain productivity)
      ("http://blog.samaltman.com/posts.atom" blog)
      ("https://vitalik.ca/feed.xml" cryptocurrencies blog)
-     ("https://news.ycombinator.com/rss" news tech hackernews)
+     ("https://news.ycombinator.com/rss" news tech dense hackernews)
      ("https://johnmarkmorris.com/feed/" uncertain)
      ("https://hamblingreen.gitlab.io/rss.xml" blog tech)
      ("https://danluu.com/atom.xml" blog tech)
