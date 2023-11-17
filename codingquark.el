@@ -72,7 +72,8 @@
      ("https://www.overcomingbias.com/feed" blog rationality science)
      ("https://aswathdamodaran.blogspot.com/feeds/posts/default" blog finance)
      ("https://keepthinking.blog/index.xml" blog emacs)
-     ("https://lockywolf.net/atom-full.xml" blog emacs))))
+     ("https://lockywolf.net/atom-full.xml" blog emacs)
+     ("https://idiomdrottning.org/blog" blog emacs))))
 
 (use-package dired
   :hook (dired-mode . denote-dired-mode))
