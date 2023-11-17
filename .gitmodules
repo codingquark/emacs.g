@@ -27,6 +27,9 @@
 [submodule "bui"]
 	path = lib/bui
 	url = https://github.com/alezost/bui.el
+[submodule "captain"]
+	path = lib/captain
+	url = git@github.com:emacsmirror/captain.git
 [submodule "closql"]
 	path = lib/closql
 	url = git@github.com:magit/closql.git
@@ -72,12 +75,18 @@
 [submodule "epkg"]
 	path = lib/epkg
 	url = git@github.com:emacscollective/epkg.git
+[submodule "erc-terminal-notifier"]
+	path = lib/erc-terminal-notifier
+	url = https://github.com/julienXX/erc-terminal-notifier.el
 [submodule "exec-path-from-shell"]
 	path = lib/exec-path-from-shell
 	url = https://github.com/purcell/exec-path-from-shell
 [submodule "f"]
 	path = lib/f
 	url = https://github.com/rejeep/f.el
+[submodule "flycheck"]
+	path = lib/flycheck
+	url = https://github.com/flycheck/flycheck
 [submodule "git-modes"]
 	path = lib/git-modes
 	url = git@github.com:magit/git-modes.git
