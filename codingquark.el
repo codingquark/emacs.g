@@ -522,7 +522,29 @@
   :defer t
   :custom
   ;; Change the ordering of dicts used in echant’s config
-  (ispell-program-name "enchant-2"))
+  (ispell-program-name "enchant-2")
+  :config
+  ;; Tell ispell.el that ’ can be part of a word, from http://endless parentheses.com/ispell-and-apostrophes.html
+  (setq ispell-local-dictionary-alist
+        `((nil "[[:alpha:]]" "[^[:alpha:]]"
+               "['\x2019]" nil ("-B") nil utf-8)))
+  ;;; Don't send ’ to the subprocess.
+  (defun endless/replace-apostrophe (args)
+    (cons (replace-regexp-in-string
+           "’" "'" (car args))
+          (cdr args)))
+  (advice-add #'ispell-send-string :filter-args
+              #'endless/replace-apostrophe)
+
+  ;;; Convert ' back to ’ from the subprocess.
+  (defun endless/replace-quote (args)
+    (if (not (derived-mode-p 'org-mode))
+        args
+      (cons (replace-regexp-in-string
+             "'" "’" (car args))
+            (cdr args))))
+  (advice-add #'ispell-parse-output :filter-args
+              #'endless/replace-quote))
 
 (use-package flyspell
   :diminish)
