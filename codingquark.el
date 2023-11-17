@@ -559,4 +559,5 @@
 ;; magit-delta deps
 ;; - xterm-color
 (use-package magit-delta
+  :diminish
   :hook (magit-mode . magit-delta-mode))
