@@ -147,6 +147,7 @@
   (setq modus-themes-links '(neutral-underline))
   (setq modus-themes-prompts '(intense))
   (setq modus-themes-region '(bg-only accented))
+  (setq sentence-end-double-space nil)
   ;; TODO Check modus-themes-org-agenda
 
   (load-theme 'modus-operandi)
