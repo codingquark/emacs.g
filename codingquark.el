@@ -563,6 +563,34 @@
 
 (use-package text-mode
   :hook ((text-mode . flyspell-mode)))
+(use-package notmuch
+  :defer t
+  :bind ("C-x m" . notmuch)
+  :custom
+  (notmuch-show-logo nil)
+  (notmuch-command "notmuch")
+  (notmuch-address-use-company nil)
+  (notmuch-hello-recent-searches-max 3)
+  (notmuch-hello-thousands-separator ",")
+  (notmuch-search-oldest-first nil)
+  (notmuch-saved-searches
+   `((:name "inbox" :query "tag:inbox" :key ,(kbd "i"))
+     (:name "unread" :query "tag:unread" :key ,(kbd "u"))
+     (:name "flagged" :query "tag:flagged" :key ,(kbd "f"))
+     (:name "lists" :query "tag:lists and tag:unread" :key ,(kbd "l"))
+     (:name "drafts" :query "tag:draft" :key ,(kbd "d"))))
+  :config
+  (setq sendmail-program "msmtp"
+	send-mail-function 'smtpmail-send-it
+	message-sendmail-f-is-evil t
+	message-sendmail-extra-arguments '("--read-envelope-from")
+	message-send-mail-function 'message-send-mail-with-sendmail))
+(use-package notmuch-indicator
+  :custom
+  (notmuch-indicator-notmuch-config-file ".config/notmuch/config")
+  (notmuch-indicator-args
+   '((:terms "tag:unread and tag:inbox" :label "✉️")))
+  (notmuch-indicator-hide-empty-counters t))
 ;; magit-delta deps
 ;; - xterm-color
 (use-package magit-delta
