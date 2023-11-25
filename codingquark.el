@@ -589,6 +589,7 @@
 	message-sendmail-f-is-evil t
 	message-sendmail-extra-arguments '("--read-envelope-from")
 	message-send-mail-function 'message-send-mail-with-sendmail))
+
 (use-package notmuch-indicator
   :custom
   (notmuch-indicator-notmuch-config-file ".config/notmuch/config")
@@ -600,3 +601,9 @@
 (use-package magit-delta
   :diminish
   :hook (magit-mode . magit-delta-mode))
+
+(use-package captain
+  :defer t
+  :hook ((text-mode . (lambda ()
+			(setq captain-predicate (lambda () t))))))
+
