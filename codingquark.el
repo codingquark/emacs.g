@@ -259,6 +259,7 @@
   :mode ("\\.graphql\\'" "\\.gql\\'"))
 
 (use-package lsp-mode
+  :defer t
   :init
   (setq lsp-keymap-prefix "s-l")
   :commands (lsp lsp-deferred)
@@ -272,7 +273,8 @@
   (setq lsp-enable-snippet nil)
   (setq lsp-headerline-breadcrumb-enable nil))
 
-(use-package lsp-pyright)
+(use-package lsp-pyright
+  :defer t)
 
 ;; dap-mode setup
 ;; posframe
