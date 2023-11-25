@@ -596,6 +596,17 @@
   (notmuch-indicator-args
    '((:terms "tag:unread and tag:inbox" :label "✉️")))
   (notmuch-indicator-hide-empty-counters t))
+
+;; mastodon.el deps
+;; - request
+;; -- deferred
+;; - persist
+(use-package mastodon
+  :defer t
+  :custom
+  (mastodon-instance-url "https://mathstodon.xyz")
+  (mastodon-active-user "codingquark"))
+
 ;; magit-delta deps
 ;; - xterm-color
 (use-package magit-delta
