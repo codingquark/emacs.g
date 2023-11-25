@@ -563,6 +563,10 @@
 
 (use-package text-mode
   :hook ((text-mode . flyspell-mode)))
+
+(use-package racket-mode
+  :defer t)
+
 (use-package notmuch
   :defer t
   :bind ("C-x m" . notmuch)
