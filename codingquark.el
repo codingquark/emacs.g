@@ -150,6 +150,7 @@
   (setq modus-themes-prompts '(intense))
   (setq modus-themes-region '(bg-only accented))
   (setq sentence-end-double-space nil)
+  (setq modus-themes-mixed-fonts t)
   ;; TODO Check modus-themes-org-agenda
 
   (load-theme 'modus-operandi)
