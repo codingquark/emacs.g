@@ -395,7 +395,9 @@
   :diminish auto-revert-mode)
 
 (use-package olivetti
-  :diminish (olivetti-mode " ✍️"))
+  :diminish (olivetti-mode " ✍️")
+  :custom
+  (olivetti-style 'nil))
 
 (use-package face-remap
   :diminish (buffer-face-mode text-scale-mode))
