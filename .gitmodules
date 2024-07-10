@@ -38,7 +38,7 @@
 	url = https://github.com/mickeynp/combobulate.git
 [submodule "compat"]
 	path = lib/compat
-	url = https://git.sr.ht/~pkal/compat
+	url = https://github.com/emacs-compat/compat
 [submodule "dap-mode"]
 	path = lib/dap-mode
 	url = https://github.com/emacs-lsp/dap-mode
@@ -52,7 +52,7 @@
 	url = https://github.com/kiwanami/emacs-deferred
 [submodule "denote"]
 	path = lib/denote
-	url = git@github.com:emacsmirror/denote.git
+	url = git@github.com:protesilaos/denote.git
 [submodule "diff-hl"]
 	path = lib/diff-hl
 	url = git@github.com:dgutov/diff-hl.git
@@ -107,7 +107,7 @@
 	url = https://github.com/ledger/ledger-mode
 [submodule "lin"]
 	path = lib/lin
-	url = git@github.com:emacsmirror/lin.git
+	url = git@github.com:protesilaos/lin.git
 [submodule "llama"]
 	path = lib/llama
 	url = https://git.sr.ht/~tarsius/llama
