@@ -176,8 +176,9 @@
   (defun cq/electric-pair-mode-hook ()
     (electric-indent-mode 1)
     (electric-pair-mode 1)
-    (electric-quote-mode 1))
-  :hook (after-init . cq/electric-pair-mode-hook))
+    ;; (electric-quote-mode 1)
+    )
+  :hook (prog-mode . cq/electric-pair-mode-hook))
 
 (use-package org
   :bind (("C-c c" . org-capture)
