@@ -331,7 +331,7 @@
   (lin-global-mode t))
 
 (use-package denote
-  ;; :hook (find-file . denote-link-buttonize-buffer)
+  :hook (find-file . denote-fontify-links-mode)
   :bind (
 	 ("C-c n j" . denote-journal-extras-new-or-existing-entry)
 	 ("C-c n n" . denote)
